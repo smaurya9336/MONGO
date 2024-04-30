@@ -21,13 +21,39 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
-User.findOne({ age: { $gt: 25 } })
+User.findByIdAndDelete("6630ad44a6816e5892face89")
   .then((res) => {
     console.log(res);
   })
   .catch((err) => {
     console.log(err);
   });
+
+// User.findOneAndDelete({ name: "Farah" });
+// User.find();
+// User.updateOne({ name: "Farah" }, { age: 30 })
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// User.findOneAndUpdate({ name: "Mahi" }, { age: 35 })
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// User.findOne({ age: { $gt: 40 } })
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
 
 // const Employee = mongoose.model("Employee", userSchema);
 
