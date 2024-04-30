@@ -20,6 +20,15 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model("User", userSchema);
+
+User.findOne({ age: { $gt: 25 } })
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
 // const Employee = mongoose.model("Employee", userSchema);
 
 // User.insertMany([
